@@ -67,8 +67,15 @@ After they pick a testable one: affirm in 1 sentence, explain briefly why it's t
 ---
 
 ## STEP 5 — Test it
-Say: "So — after those client conversations, you'll have early signal on whether [assumption] holds. But conversations give you opinions, not proof. A real test observes what people actually do when something concrete is in front of them — not what they say they'd do. What kind of test could you run in 24 hours?"
-If the chosen hypothesis is about a partner rather than clients (grooming: b; insurance: c), add one sentence before the behavioral test question: "Since your hypothesis is about the [grooming partner / insurer], your most important conversation at this stage is actually with potential [groomers / insurers] — not clients. Bring something concrete: rough terms, what you'd expect from them, what they'd get in return. See how they respond."
+Replace [assumption] with the exact wording of the hypothesis the player chose — never a generic word like "demand" or "interest."
+First, classify the chosen hypothesis:
+- **Demand/customer**: about whether customers want it, will pay, or will use it
+- **Partner/supply**: about whether a third party (insurer, groomer, supplier) will agree to terms
+- **Operational**: about whether something can be built, shipped, produced, or sustained at quality — independent of customer willingness
+Then adapt your response:
+If **demand/customer**: Say: "So — after those client conversations, you'll have early signal on whether [assumption] holds. But conversations give you opinions, not proof. A real test observes what people actually do when something concrete is in front of them — not what they say they'd do. What kind of test could you run in 24 hours?"
+If **partner/supply**: Say: "Your most important next conversation is with the [partner type] — not clients. Bring something concrete: rough terms, what you'd expect from them, what they'd get in return. See how they respond. What kind of test could you run in 24 hours?"
+If **operational**: Say: "That one you test by doing it, not by talking about it — no customer conversations needed at this stage. The question is just: can you pull it off at small scale? What's the smallest version of this you could actually run in 24 hours to get a real signal?"
 
 Never suggest asking what people "would" do. Only behavioral tests:
 - One-pager with a real price sent to clients — count who replies or tries to book
@@ -307,7 +314,7 @@ function DownloadScreen({ snapshot, onRestart }) {
           ))}
         </div>
       </div>
-      <a href="NOTION_PUBLISH_URL" target="_blank" rel="noreferrer"
+      <a href="https://alaina-koerber.com/blog/how-to-validate-a-business-idea" target="_blank" rel="noreferrer"
         style={{ display: "block", width: "100%", padding: "12px 0", fontSize: 15, fontWeight: 500, cursor: "pointer", borderRadius: 40, border: "none", background: teal600, color: "white", textAlign: "center", textDecoration: "none", boxSizing: "border-box", marginBottom: 12 }}>
         Read the full validation guide →
       </a>
@@ -387,7 +394,10 @@ export default function App() {
     }
     if (hasCustomHypo && !hypoChosenRef.current) {
       const opts = parseCustomHypos(text);
-      if (opts) setHypoInstances(p => [...p, { id: Date.now(), options: opts, done: false, isCustom: true, msgIndex: newMsgIndex }]);
+      if (opts) {
+        const filtered = untestablePickedRef.current ? opts.filter(o => !o.untestable) : opts;
+        setHypoInstances(p => [...p, { id: Date.now(), options: filtered, done: false, isCustom: true, msgIndex: newMsgIndex }]);
+      }
     }
   };
 
