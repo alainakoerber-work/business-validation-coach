@@ -33,10 +33,10 @@ Validation snapshot — Walk away with a one-page summary and a concrete action 
 
 **How to use the live artifact**
 
-Open the live link in your browser: https://claude.ai/public/artifacts/3d8310ed-b258-4585-9591-ac7aa371ae5e
-Choose "Let's go →" to start the petsitting scenario, or "I have my own business idea →" to validate something of your own
-Work through the conversation — answer honestly, push back if something doesn't fit
-At the end, view your full breakdown: validation snapshot, 5-step action plan, and recommended tools
+- Open the live link in your browser: https://claude.ai/public/artifacts/3d8310ed-b258-4585-9591-ac7aa371ae5e
+- Choose "Let's go →" to start the petsitting scenario, or "I have my own business idea →" to validate something of your own
+- Work through the conversation — answer honestly, push back or ask questions if something doesn't fit
+- At the end, view your full breakdown: validation snapshot, 5-step action plan, and recommended tools
 
 **How to copy and remix this artifact**
 
